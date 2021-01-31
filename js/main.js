@@ -76,6 +76,7 @@ $newCitySearchEl.on("click", ".btnNewCity", function () {
 })
 
 function currentWeather(data) {
+    $fiveDayEl.empty()
     $(".currentDate").text(now.format("(M/D/YYYY)"));
     $weatherIconEl.attr("src", `http://openweathermap.org/img/w/${data.current.weather[0].icon}.png`)
     $tempEl.text(data.current.temp)
