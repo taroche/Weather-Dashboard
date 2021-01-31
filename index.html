@@ -19,28 +19,25 @@
     </header>
     <main class="container">
         <div class="row">
-            <div class="col-3" id="newCitySearch">
+            <div class="col-3">
                 <h3>Pick a city</h3>
                 <form class="row">
                     <input class="city col-12 col-md-8" type="text">
                     <button button="submit" class="btn btn-primary col-12 col-md-4 search">Search</button>
                 </form>
+                <div id="newCitySearch"></div>
             </div>
             <div class="offset-1 col-8 row weather">
                     <div class="col-12 currentWeather">
-                        <h3><i class="currentCity"></i> <i class="currentDate"></i> <a class="weatherIcon"></a></h3>
+                        <h3><i class="currentCity"></i> <i class="currentDate"></i> <img id="wicon" src="" alt=""></h3>
                         <p>Temperature: <i class="temp"></i> F°</p>
                         <p>Humidity: <i class="humidity"></i> %</p>
                         <p>Wind Speed: <i class="windSpeed"></i> MPH</p>
                         <p>UV Index: <i class="UV"></i></p>
                     </div>
-                    <div class="col-12 5day">
-                        <h3>5-Day Forecast:</h3>
-                        <div class="dayOne"></div>
-                        <div class="dayTwo"></div>
-                        <div class="dayThree"></div>
-                        <div class="dayFour"></div>
-                        <div class="dayFive"></div>
+                    <div class="col-12">
+                        <h3 class="col-12 center">5-Day Forecast:</h3>
+                        <div class="5day row"></div>
                     </div>
             </div>
     </main>
