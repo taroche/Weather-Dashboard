@@ -82,4 +82,15 @@ function currentWeather(data) {
     $humidityEL.text(data.current.humidity)
     $windSpeedEl.text(data.current.wind_speed)
     $uvEL.text(data.current.uvi)
+    for (let i = 1; i <= 5; i++) {
+        let nextDate = new Date(data.daily[i].dt * 1000)
+        let $futureDay = $(`<div class="day${i} card col-12 col-lg-2"></div>`)
+        let $futureDate = $("<p>").attr("class", `cardDate`).text(`${nextDate.getMonth()+1}/${nextDate.getDate()}/${nextDate.getFullYear()}`)
+        let $futureIcon = $(`<img class="cardIcon" src="http://openweathermap.org/img/w/${data.daily[i].weather[0].icon}.png" alt="${data.daily[i].weather[0].description}">`)
+        let $futureTemp = $(`<p class="cardTemp">Temperature: ${data.daily[i].temp.day} F</p>`)
+        let $futureHumidity = $(`<p class="cardHumidity">Humidity: ${data.daily[i].humidity}%</p>`)
+        $fiveDayEl.append($futureDay)
+        $futureDay.append($futureDate, $futureIcon, $futureTemp, $futureHumidity)
+    }
+
 }
