@@ -19,7 +19,7 @@ $("window").ready(function () {
 
     for (let i = 0; i < cityArr.length; i++) {
         let $btn = $(`<button></button>`)
-        $btn.attr("class", "btnNewCity btn btn-primary col-12 col-lg-5 offset-lg-1")
+        $btn.attr("class", "btnNewCity btn btn-outline-dark col-12 col-lg-5 offset-lg-1")
         $btn.attr("type", "button")
         $btn.text(cityArr[i].toString())
         $btn.attr("value", cityArr[i].toString())
@@ -38,7 +38,7 @@ $searchEl.on("click", function (e) {
         }
     }).then(res => {
         let $btn = $(`<button></button>`)
-        $btn.attr("class", "btnNewCity btn btn-primary col-12 col-lg-5 offset-lg-1")
+        $btn.attr("class", "btnNewCity btn btn-outline-dark col-12 col-lg-5 offset-lg-1")
         $btn.attr("type", "button")
         $btn.text(`${res.city.name}`)
         $btn.attr("value", `${res.city.name}`)
