@@ -63,6 +63,13 @@ $newCitySearchEl.on("click", ".btnNewCity", function () {
             let lon = data.city.coord.lon
             $currentCityEl.text(data.city.name)
 
+            $.ajax({
+                url: `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly&units=imperial&appid=${apiKey}`,
+                method: "GET",
+                success: function (response) {
+                    currentWeather(response);
+                }
+            });
         }
 
     });
