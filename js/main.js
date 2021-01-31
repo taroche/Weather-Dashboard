@@ -28,5 +28,12 @@ $searchEl.on("click", function (e) {
         $btn.text(`${res.city.name}`)
         $btn.attr("value", `${res.city.name}`)
         $newCitySearchEl.append($btn)
+        saveCity(res)
     })
 });
+
+function saveCity(res) {
+    let input = res.city.name
+    cityArr.push(input)
+    localStorage.setItem("cityArr", JSON.stringify(cityArr))
+};
