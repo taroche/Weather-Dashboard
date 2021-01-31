@@ -74,3 +74,12 @@ $newCitySearchEl.on("click", ".btnNewCity", function () {
 
     });
 })
+
+function currentWeather(data) {
+    $(".currentDate").text(now.format("(M/D/YYYY)"));
+    $weatherIconEl.attr("src", `http://openweathermap.org/img/w/${data.current.weather[0].icon}.png`)
+    $tempEl.text(data.current.temp)
+    $humidityEL.text(data.current.humidity)
+    $windSpeedEl.text(data.current.wind_speed)
+    $uvEL.text(data.current.uvi)
+}
