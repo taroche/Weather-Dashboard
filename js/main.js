@@ -52,3 +52,18 @@ function saveCity(res) {
     cityArr.push(input)
     localStorage.setItem("cityArr", JSON.stringify(cityArr))
 };
+
+$newCitySearchEl.on("click", ".btnNewCity", function () {
+    let newCityVal = $(this).attr("value");
+    $.ajax({
+        url: `https://api.openweathermap.org/data/2.5/forecast?q=${newCityVal},us&units=imperial&appid=${apiKey}`,
+        method: "GET",
+        success: function (data) {
+            let lat = data.city.coord.lat
+            let lon = data.city.coord.lon
+            $currentCityEl.text(data.city.name)
+
+        }
+
+    });
+})
