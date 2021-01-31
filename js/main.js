@@ -12,6 +12,21 @@ const $newCitySearchEl = $("#newCitySearch")
 const apiKey = "2da202c3060a41dedb520da5c37123a2";
 let cityArr = [];
 
+$("window").ready(function () {
+    if (localStorage.getItem("cityArr")) {
+        cityArr = JSON.parse(localStorage.getItem('cityArr'))
+    }
+
+    for (let i = 0; i < cityArr.length; i++) {
+        let $btn = $(`<button></button>`)
+        $btn.attr("class", "btnNewCity btn btn-primary col-12 col-lg-5 offset-lg-1")
+        $btn.attr("type", "button")
+        $btn.text(cityArr[i].toString())
+        $btn.attr("value", cityArr[i].toString())
+        $newCitySearchEl.append($btn)
+    }
+});
+
 $searchEl.on("click", function (e) {
     e.preventDefault()
     let value = $(this).prev().val()
